@@ -1,5 +1,5 @@
 const os = require('os');
-
+const { myMessage } = require('./log');
 
 setInterval( () => {
     
@@ -16,5 +16,6 @@ setInterval( () => {
 
     console.clear();
     console.table(statsCpu);
+    myMessage('Rodando...');
 
 }, 1000);
