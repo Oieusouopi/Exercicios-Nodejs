@@ -16,6 +16,6 @@ setInterval( () => {
 
     console.clear();
     console.table(statsCpu);
-    myMessage('Rodando...');
+    myMessage(`${ JSON.stringify(statsCpu) }\n`);
 
 }, 1000);
