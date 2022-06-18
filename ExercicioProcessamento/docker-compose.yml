@@ -13,6 +13,11 @@ services:
     working_dir: /index
     # networks:
     # - nodeapp
+  ubuntu:
+    image: ubuntu:20.04
+    container_name: ubuntu_SO
+    command: bash
+    restart: on-failure
 
 
 # As chaves `tty`, `stdin_open` e `command` fazem com que o container fique
