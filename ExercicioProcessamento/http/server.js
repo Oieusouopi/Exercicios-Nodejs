@@ -1,12 +1,16 @@
-/* eslint-disable no-undef */
+const fs = require('fs');
 const http = require('http');
+const path = require('path');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
 http.createServer((req, res) => {
     if (req.url === '/') {
-        res.end('<h1>pagina principal</h1>');
+        fs.readFile(path.join(__dirname, 'public' ,'index.html'),
+        (err, content) => {
+            if (err) throw err;
+            res.end(content);
+        })
     }
-    res.end('qualquer pagina');
 }).listen(PORT, () => console.log(`listen on ${ PORT }`));
